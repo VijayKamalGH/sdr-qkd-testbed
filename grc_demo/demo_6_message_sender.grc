@@ -1,0 +1,255 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: demo_6_message_sender
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: 'LIVE 2x2 radio: message Sender (laptop, bladeRF-cli)'
+    window_size: (800,420)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+blocks:
+- name: gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 2,0,1,2
+    label: '"Transmit gain (dB)"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '30'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 70
+    rotation: 0
+- name: howto
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: 0,0,1,2
+    label: '"How it works"'
+    type: string
+    value: '"Type a message, set the gain, press Send message. Radios warmed up; start
+      the message Receiver first. One transmission lasts 30 s and repeats the message."'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 70
+    rotation: 0
+- name: msg
+  id: variable_qtgui_entry
+  parameters:
+    comment: ''
+    entry_signal: editingFinished
+    gui_hint: 1,0,1,2
+    label: '"Message to send (max 240 bytes)"'
+    type: string
+    value: '"hello"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 540
+    - 70
+    rotation: 0
+- name: send
+  id: variable_qtgui_push_button
+  parameters:
+    comment: ''
+    gui_hint: 3,0,1,2
+    label: '"Send message"'
+    pressed: '1'
+    released: '0'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 800
+    - 70
+    rotation: 0
+- name: link_send
+  id: snippet
+  parameters:
+    alias: ''
+    code: "from PyQt5 import Qt\ntry:                                  # \"Send message\"\
+      \ takes the text typed in the box (no Enter needed)\n    _le = self._msg_line_edit\n\
+      \    for _b in self.findChildren(Qt.QPushButton):\n        if _b.text() == \"\
+      Send message\":\n            _b.pressed.connect(lambda: self.set_msg(str(_le.text())))\n\
+      except Exception as _e:\n    print(\"note: could not link the Send button to\
+      \ the message box:\", _e)\n"
+    comment: ''
+    priority: '0'
+    section: main_after_init
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 240
+    rotation: 0
+- name: player
+  id: epy_block
+  parameters:
+    _source_code: "import os, sys\nfor _p in (os.getcwd(), os.environ.get(\"QKD_GRC_DIR\"\
+      , \"\"), os.path.expanduser(\"~/grc_demo\")):\n    if _p and _p not in sys.path:\
+      \ sys.path.insert(0, _p)\nimport qkd_grc\n\nclass blk(qkd_grc.MessagePlayer):\n\
+      \    \"\"\"Sender laptop: builds the message waveform, writes ~/txfiles/MSG_AB.bin\
+      \ (same format as TX_AB.bin) and plays it with bladeRF-cli for 30 s.\"\"\"\n\
+      \    def __init__(self, text=\"hello\", gain=30, send=0):\n        qkd_grc.MessagePlayer.__init__(self,\
+      \ text, gain, send)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    send: send
+    text: msg
+  states:
+    _io_cache: '(''Message player (Sender laptop)'', ''blk'', [(''text'', "''hello''"),
+      (''gain'', ''30''), (''send'', ''0'')], [], [(''0'', ''float'', 1), (''1'',
+      ''float'', 1), (''2'', ''float'', 1), (''3'', ''float'', 1), (''4'', ''float'',
+      1)], ''Sender laptop: builds the message waveform, writes ~/txfiles/MSG_AB.bin
+      (same format as TX_AB.bin) and plays it with bladeRF-cli for 30 s.'', [''gain'',
+      ''send'', ''text''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 370
+    rotation: 0
+- name: readout
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_NONE
+    gui_hint: 4,0,2,2
+    label1: '"Transmissions finished"'
+    label10: ''
+    label2: '"Failed (USB drop)"'
+    label3: '"Status (0 idle, 1 preparing, 2 transmitting)"'
+    label4: '"Chunks in message"'
+    label5: '"Message loop"'
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    max: '100'
+    min: '0'
+    name: '"Message Sender"'
+    nconnections: '5'
+    type: float
+    unit1: '""'
+    unit10: ''
+    unit2: '""'
+    unit3: '""'
+    unit4: '""'
+    unit5: '"s"'
+    unit6: ''
+    unit7: ''
+    unit8: ''
+    unit9: ''
+    update_time: '0.3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 320
+    - 240
+    rotation: 0
+connections:
+- - player
+  - '0'
+  - readout
+  - '0'
+- - player
+  - '1'
+  - readout
+  - '1'
+- - player
+  - '2'
+  - readout
+  - '2'
+- - player
+  - '3'
+  - readout
+  - '3'
+- - player
+  - '4'
+  - readout
+  - '4'
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2

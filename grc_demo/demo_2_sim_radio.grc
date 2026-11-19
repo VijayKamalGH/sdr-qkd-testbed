@@ -1,0 +1,1229 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: demo_2_sim_radio
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Spatial-qubit BB84 over a simulated 2x2 radio
+    window_size: (1250,950)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+blocks:
+- name: cfo
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 3,0,1,2
+    label: '"Carrier offset between radios (Hz)"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '-2000'
+    step: '50'
+    stop: '2000'
+    value: '500'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 70
+    rotation: 0
+- name: eve_rate
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 1,0,1,2
+    label: '"Eavesdropper: share of qubits intercepted"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.05'
+    stop: '1'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 70
+    rotation: 0
+- name: h00
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 540
+    - 70
+    rotation: 0
+- name: h01
+  id: variable
+  parameters:
+    comment: ''
+    value: mix*np.exp(1j*np.deg2rad(phase))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 800
+    - 70
+    rotation: 0
+- name: h10
+  id: variable
+  parameters:
+    comment: ''
+    value: 0.85*mix*np.exp(1j*np.deg2rad(phase+70))
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1060
+    - 70
+    rotation: 0
+- name: h11
+  id: variable
+  parameters:
+    comment: ''
+    value: 0.9*np.exp(0.7j)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 180
+    rotation: 0
+- name: howto
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: 0,0,1,4
+    label: '"How it works"'
+    type: string
+    value: '"Sender (TX1, TX2) -> 2x2 channel + noise -> Receiver. Move the sliders;
+      press New session after each change."'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 180
+    rotation: 0
+- name: mix
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 2,0,1,2
+    label: '"Cross-talk between the two antennas"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.05'
+    stop: '0.9'
+    value: '0.35'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 540
+    - 180
+    rotation: 0
+- name: noise
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 1,2,1,2
+    label: '"Receiver noise level"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.02'
+    stop: '1.5'
+    value: '0.2'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 800
+    - 180
+    rotation: 0
+- name: phase
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 2,2,1,2
+    label: '"Cross-talk phase (deg)"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '5'
+    stop: '180'
+    value: '40'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1060
+    - 180
+    rotation: 0
+- name: reset
+  id: variable_qtgui_push_button
+  parameters:
+    comment: ''
+    gui_hint: 3,2,1,2
+    label: '"New session"'
+    pressed: '1'
+    released: '0'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 290
+    rotation: 0
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '2000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 290
+    rotation: 0
+- name: cfo0
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1520
+    - 460
+    rotation: 0
+- name: cfo1
+  id: blocks_multiply_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1520
+    - 590
+    rotation: 0
+- name: g00
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: h00
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 460
+    rotation: 0
+- name: g01
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: h01
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 590
+    rotation: 0
+- name: g10
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: h10
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 720
+    rotation: 0
+- name: g11
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: h11
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 850
+    rotation: 0
+- name: imp_np
+  id: import
+  parameters:
+    alias: ''
+    comment: ''
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 540
+    - 290
+    rotation: 0
+- name: lo
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: cfo
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    showports: 'False'
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 460
+    rotation: 0
+- name: n0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: noise
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '1'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 590
+    rotation: 0
+- name: n1
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: noise
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '2'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 720
+    rotation: 0
+- name: qubit_plane
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: 4,0,3,2
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '"Receiver''s qubit plane (z1, z2): the four BB84 states (1,0) (0,1) (0.7,0.7)
+      (0.7,-0.7)"'
+    nconnections: '1'
+    size: '1088'
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.2'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 2120
+    - 460
+    rotation: 0
+- name: re_a
+  id: blocks_complex_to_real
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 980
+    rotation: 0
+- name: re_b
+  id: blocks_complex_to_real
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 620
+    - 1110
+    rotation: 0
+- name: re_r0
+  id: blocks_complex_to_real
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1820
+    - 460
+    rotation: 0
+- name: re_r1
+  id: blocks_complex_to_real
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1820
+    - 590
+    rotation: 0
+- name: readout
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_NONE
+    gui_hint: 4,2,3,2
+    label1: '"QBER"'
+    label10: ''
+    label2: '"Q_upper (abort if > 11)"'
+    label3: '"SINR stream A"'
+    label4: '"SINR stream B"'
+    label5: '"Secret key"'
+    label6: '"Frames decoded"'
+    label7: '"Status (0 busy, 1 key, 2 abort)"'
+    label8: ''
+    label9: ''
+    max: '100'
+    min: '0'
+    name: '"Result"'
+    nconnections: '7'
+    type: float
+    unit1: '"%"'
+    unit10: ''
+    unit2: '"%"'
+    unit3: '"dB"'
+    unit4: '"dB"'
+    unit5: '"bits"'
+    unit6: '""'
+    unit7: '""'
+    unit8: ''
+    unit9: ''
+    update_time: '0.3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 2120
+    - 590
+    rotation: 0
+- name: receiver
+  id: epy_block
+  parameters:
+    _source_code: "import os, sys\nfor _p in (os.getcwd(), os.environ.get(\"QKD_GRC_DIR\"\
+      , \"\"), os.path.expanduser(\"~/grc_demo\")):\n    if _p and _p not in sys.path:\
+      \ sys.path.insert(0, _p)\nimport qkd_grc\n\nclass blk(qkd_grc.QubitDecoder):\n\
+      \    \"\"\"Receiver: sync, channel estimate, MMSE, random-basis measurement,\
+      \ sifting, QBER, Cascade, privacy amplification.\"\"\"\n    def __init__(self,\
+      \ seed=20261030, receiver_seed=777, batch_frames=40, key_frames=200, skip_first=0,\
+      \ reset=0):\n        qkd_grc.QubitDecoder.__init__(self, seed, receiver_seed,\
+      \ batch_frames, key_frames, skip_first, reset)\n"
+    affinity: ''
+    alias: ''
+    batch_frames: '40'
+    comment: ''
+    key_frames: '200'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    receiver_seed: '777'
+    reset: reset
+    seed: '20261030'
+    skip_first: '0'
+  states:
+    _io_cache: '(''Qubit decoder (Receiver)'', ''blk'', [(''seed'', ''20261030''),
+      (''receiver_seed'', ''777''), (''batch_frames'', ''40''), (''key_frames'', ''200''),
+      (''skip_first'', ''0''), (''reset'', ''0'')], [(''0'', ''complex'', 1), (''1'',
+      ''complex'', 1)], [(''0'', ''complex'', 1), (''1'', ''float'', 1), (''2'', ''float'',
+      1), (''3'', ''float'', 1), (''4'', ''float'', 1), (''5'', ''float'', 1), (''6'',
+      ''float'', 1), (''7'', ''float'', 1)], ''Receiver: sync, channel estimate, MMSE,
+      random-basis measurement, sifting, QBER, Cascade, privacy amplification.'',
+      [''batch_frames'', ''key_frames'', ''receiver_seed'', ''reset'', ''seed'', ''skip_first''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1820
+    - 720
+    rotation: 0
+- name: rx0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1220
+    - 460
+    rotation: 0
+- name: rx1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 1220
+    - 590
+    rotation: 0
+- name: rx_scope
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: 9,0,2,4
+    label1: '"RX0"'
+    label10: Signal 10
+    label2: '"RX1"'
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Receiver antennas RX0 / RX1 (after channel + noise)"'
+    nconnections: '2'
+    size: '96000'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.5'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 2120
+    - 720
+    rotation: 0
+- name: sender
+  id: epy_block
+  parameters:
+    _source_code: "import os, sys\nfor _p in (os.getcwd(), os.environ.get(\"QKD_GRC_DIR\"\
+      , \"\"), os.path.expanduser(\"~/grc_demo\")):\n    if _p and _p not in sys.path:\
+      \ sys.path.insert(0, _p)\nimport qkd_grc\n\nclass blk(qkd_grc.QubitSource):\n\
+      \    \"\"\"Sender: builds the frozen frame (pilots, index word, 272 spatial\
+      \ qubits) on TX1/TX2. eve_rate = share of qubits an eavesdropper intercepts.\"\
+      \"\"\n    def __init__(self, seed=20261030, amplitude=0.14, eve_rate=0.0):\n\
+      \        qkd_grc.QubitSource.__init__(self, seed, amplitude, eve_rate)\n"
+    affinity: ''
+    alias: ''
+    amplitude: '0.14'
+    comment: ''
+    eve_rate: eve_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    seed: '20261030'
+  states:
+    _io_cache: '(''Qubit source (Sender)'', ''blk'', [(''seed'', ''20261030''), (''amplitude'',
+      ''0.14''), (''eve_rate'', ''0.0'')], [], [(''0'', ''complex'', 1), (''1'', ''complex'',
+      1)], ''Sender: builds the frozen frame (pilots, index word, 272 spatial qubits)
+      on TX1/TX2. eve_rate = share of qubits an eavesdropper intercepts.'', [''amplitude'',
+      ''eve_rate'', ''seed''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 850
+    rotation: 0
+- name: sum0
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 920
+    - 460
+    rotation: 0
+- name: sum1
+  id: blocks_add_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_inputs: '2'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 920
+    - 590
+    rotation: 0
+- name: thr0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 320
+    - 460
+    rotation: 0
+- name: thr1
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 320
+    - 590
+    rotation: 0
+- name: tx_scope
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: 7,0,2,4
+    label1: '"TX1 (stream A)"'
+    label10: Signal 10
+    label2: '"TX2 (stream B)"'
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '"Sender: one frame, TX1 (A) and TX2 (B)  [pilot A | pilot B | index | 272
+      qubits | guard]"'
+    nconnections: '2'
+    size: '96000'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: float
+    update_time: '0.5'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 920
+    - 720
+    rotation: 0
+connections:
+- - cfo0
+  - '0'
+  - re_r0
+  - '0'
+- - cfo0
+  - '0'
+  - receiver
+  - '0'
+- - cfo1
+  - '0'
+  - re_r1
+  - '0'
+- - cfo1
+  - '0'
+  - receiver
+  - '1'
+- - g00
+  - '0'
+  - sum0
+  - '0'
+- - g01
+  - '0'
+  - sum0
+  - '1'
+- - g10
+  - '0'
+  - sum1
+  - '0'
+- - g11
+  - '0'
+  - sum1
+  - '1'
+- - lo
+  - '0'
+  - cfo0
+  - '1'
+- - lo
+  - '0'
+  - cfo1
+  - '1'
+- - n0
+  - '0'
+  - rx0
+  - '1'
+- - n1
+  - '0'
+  - rx1
+  - '1'
+- - re_a
+  - '0'
+  - tx_scope
+  - '0'
+- - re_b
+  - '0'
+  - tx_scope
+  - '1'
+- - re_r0
+  - '0'
+  - rx_scope
+  - '0'
+- - re_r1
+  - '0'
+  - rx_scope
+  - '1'
+- - receiver
+  - '0'
+  - qubit_plane
+  - '0'
+- - receiver
+  - '1'
+  - readout
+  - '0'
+- - receiver
+  - '2'
+  - readout
+  - '1'
+- - receiver
+  - '3'
+  - readout
+  - '2'
+- - receiver
+  - '4'
+  - readout
+  - '3'
+- - receiver
+  - '5'
+  - readout
+  - '4'
+- - receiver
+  - '6'
+  - readout
+  - '5'
+- - receiver
+  - '7'
+  - readout
+  - '6'
+- - rx0
+  - '0'
+  - cfo0
+  - '0'
+- - rx1
+  - '0'
+  - cfo1
+  - '0'
+- - sender
+  - '0'
+  - thr0
+  - '0'
+- - sender
+  - '1'
+  - thr1
+  - '0'
+- - sum0
+  - '0'
+  - rx0
+  - '0'
+- - sum1
+  - '0'
+  - rx1
+  - '0'
+- - thr0
+  - '0'
+  - g00
+  - '0'
+- - thr0
+  - '0'
+  - g10
+  - '0'
+- - thr0
+  - '0'
+  - re_a
+  - '0'
+- - thr1
+  - '0'
+  - g01
+  - '0'
+- - thr1
+  - '0'
+  - g11
+  - '0'
+- - thr1
+  - '0'
+  - re_b
+  - '0'
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2

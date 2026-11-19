@@ -1,0 +1,206 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: demo_5_live_sender
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: 'LIVE 2x2 radio: Sender (laptop, bladeRF-cli)'
+    window_size: (700,420)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+blocks:
+- name: gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 1,0,1,2
+    label: '"Transmit gain (dB)"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '30'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 70
+    rotation: 0
+- name: howto
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: 0,0,1,2
+    label: '"How it works"'
+    type: string
+    value: '"Sender laptop: press Start to loop the stored 2x2 waveform (each run
+      is 50 s). Press again to stop after the current run."'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 70
+    rotation: 0
+- name: tx_on
+  id: variable_qtgui_check_box
+  parameters:
+    comment: ''
+    'false': '0'
+    gui_hint: 2,0,1,2
+    label: '"Transmit"'
+    'true': '1'
+    type: int
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 540
+    - 70
+    rotation: 0
+- name: player
+  id: epy_block
+  parameters:
+    _source_code: "import os, sys\nfor _p in (os.getcwd(), os.environ.get(\"QKD_GRC_DIR\"\
+      , \"\"), os.path.expanduser(\"~/grc_demo\")):\n    if _p and _p not in sys.path:\
+      \ sys.path.insert(0, _p)\nimport qkd_grc\n\nclass blk(qkd_grc.BladeRFPlayer):\n\
+      \    \"\"\"Sender laptop: loops `bash ~/txfiles/tx.sh GAIN` (bladeRF-cli plays\
+      \ the stored 2x2 waveform) while run = 1.\"\"\"\n    def __init__(self, gain=30,\
+      \ run=0, script=\"~/txfiles/tx.sh\"):\n        qkd_grc.BladeRFPlayer.__init__(self,\
+      \ gain, run, script)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    run: tx_on
+    script: '"~/txfiles/tx.sh"'
+  states:
+    _io_cache: '(''bladeRF-cli player (Sender laptop)'', ''blk'', [(''gain'', ''30''),
+      (''run'', ''0''), (''script'', "''~/txfiles/tx.sh''")], [], [(''0'', ''float'',
+      1), (''1'', ''float'', 1), (''2'', ''float'', 1)], ''Sender laptop: loops `bash
+      ~/txfiles/tx.sh GAIN` (bladeRF-cli plays the stored 2x2 waveform) while run
+      = 1.'', [''gain'', ''run'', ''script''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 240
+    rotation: 0
+- name: readout
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_NONE
+    gui_hint: 3,0,2,2
+    label1: '"Runs finished"'
+    label10: ''
+    label2: '"Runs cut short (USB drop)"'
+    label3: '"Transmitting (1 = yes)"'
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    max: '100'
+    min: '0'
+    name: '"Sender"'
+    nconnections: '3'
+    type: float
+    unit1: '""'
+    unit10: ''
+    unit2: '""'
+    unit3: '""'
+    unit4: ''
+    unit5: ''
+    unit6: ''
+    unit7: ''
+    unit8: ''
+    unit9: ''
+    update_time: '0.3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 320
+    - 240
+    rotation: 0
+connections:
+- - player
+  - '0'
+  - readout
+  - '0'
+- - player
+  - '1'
+  - readout
+  - '1'
+- - player
+  - '2'
+  - readout
+  - '2'
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2

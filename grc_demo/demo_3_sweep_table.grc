@@ -1,0 +1,201 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: demo_3_sweep_table
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Fresh-sweep results (W1 / W2)
+    window_size: (900,520)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+blocks:
+- name: howto
+  id: variable_qtgui_label
+  parameters:
+    comment: ''
+    formatter: None
+    gui_hint: 0,0,1,2
+    label: '"How it works"'
+    type: string
+    value: '"Pick a stored capture: transmit gain, SINR, QBER and key length with
+      the MMSE and ZF detectors."'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 70
+    rotation: 0
+- name: which
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: 1,0,1,2
+    label: '"Capture number (0 to 30; 0-16 = W1, 17-30 = W2)"'
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '30'
+    value: '0'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 280
+    - 70
+    rotation: 0
+- name: readout
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_NONE
+    gui_hint: 2,0,3,2
+    label1: '"Capture tag (SWW...)"'
+    label10: ''
+    label2: '"TX gain"'
+    label3: '"SINR"'
+    label4: '"QBER (MMSE)"'
+    label5: '"QBER (ZF)"'
+    label6: '"Key (MMSE)"'
+    label7: '"Key (ZF)"'
+    label8: ''
+    label9: ''
+    max: '100'
+    min: '0'
+    name: '"Stored result"'
+    nconnections: '7'
+    type: float
+    unit1: '""'
+    unit10: ''
+    unit2: '"dB"'
+    unit3: '"dB"'
+    unit4: '"%"'
+    unit5: '"%"'
+    unit6: '"bits"'
+    unit7: '"bits"'
+    unit8: ''
+    unit9: ''
+    update_time: '0.3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 320
+    - 240
+    rotation: 0
+- name: table
+  id: epy_block
+  parameters:
+    _source_code: "import os, sys\nfor _p in (os.getcwd(), os.environ.get(\"QKD_GRC_DIR\"\
+      , \"\"), os.path.expanduser(\"~/grc_demo\")):\n    if _p and _p not in sys.path:\
+      \ sys.path.insert(0, _p)\nimport qkd_grc\n\nclass blk(qkd_grc.ResultsTable):\n\
+      \    \"\"\"Stored fresh-sweep results (W1/W2): pick a capture, read its numbers.\"\
+      \"\"\n    def __init__(self, idx=0, table=\"w1w2_table.json\"):\n        qkd_grc.ResultsTable.__init__(self,\
+      \ idx, table)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    idx: which
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    table: '"w1w2_table.json"'
+  states:
+    _io_cache: '(''Sweep results (W1/W2)'', ''blk'', [(''idx'', ''0''), (''table'',
+      "''w1w2_table.json''")], [], [(''0'', ''float'', 1), (''1'', ''float'', 1),
+      (''2'', ''float'', 1), (''3'', ''float'', 1), (''4'', ''float'', 1), (''5'',
+      ''float'', 1), (''6'', ''float'', 1)], ''Stored fresh-sweep results (W1/W2):
+      pick a capture, read its numbers.'', [''idx'', ''table''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    state: enabled
+    coordinate:
+    - 20
+    - 240
+    rotation: 0
+connections:
+- - table
+  - '0'
+  - readout
+  - '0'
+- - table
+  - '1'
+  - readout
+  - '1'
+- - table
+  - '2'
+  - readout
+  - '2'
+- - table
+  - '3'
+  - readout
+  - '3'
+- - table
+  - '4'
+  - readout
+  - '4'
+- - table
+  - '5'
+  - readout
+  - '5'
+- - table
+  - '6'
+  - readout
+  - '6'
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
