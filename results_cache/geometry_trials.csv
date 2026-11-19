@@ -1,0 +1,24 @@
+block,tag,setting,gain,frames,sinr_A_dB,sinr_B_dB,qber_percent,errors,key_bit,note
+polarisation,ref1,0/0 (11:22),24,268,24.7,22.0,0.00,0,22213,2 m; mean SINR 23.6; printed cond 6.2; complex cond median 3.3
+polarisation,ref2,0/0 (13:07),24,268,24.2,18.1,0.00,0,22213,mean SINR 22.1; printed cond 32.9
+polarisation,P90_0_1,+-90/0 (11:36),24,268,13.2,11.1,0.27,94,21353,mean 12.3; printed 6.1; complex 3.6
+polarisation,P90_0_2,+-90/0 (11:47),24,267,11.8,12.8,0.25,88,21206,mean 12.3; printed 2.8
+polarisation,P90_90,+-90/+-90 (12:58),24,260,16.7,10.5,0.57,194,19911,mean 14.6; printed 5.4
+polarisation,P45_0,+-45/0 (12:25),24,263,14.4,15.9,0.04,12,21615,mean 15.2; printed 41.6; complex 3.6
+polarisation,P45_45,+-45/+-45 matched (12:20),24,261,14.2,12.3,0.30,101,20524,mean 13.4; printed 54.3; complex 1.5
+distance_5m,DIST5A,5 m indoor,24,,10.8,7.0,6.41,,,abort (Qupper>11%)
+distance_5m,DIST5B,5 m indoor,24,,12.0,8.6,2.94,,11633,
+distance_5m,DIST5G30A,5 m indoor,30,,16.4,12.2,1.61,,16654,
+distance_5m,DIST5G30B,5 m indoor,30,,14.4,9.6,4.82,,6557,stream B weaker in all four
+outdoor_indoor,1912,9.62 m door open,36,215,14.8,14.7,0.17,49,17757,0 rejected
+outdoor_indoor,1913,9.62 m door open,36,216,12.5,13.3,0.00,1,18204,1 rejected
+outdoor_indoor,DOORC36A,9.62 m door closed,36,268,12.5,13.8,0.00,0,22213,complete
+outdoor_indoor,DOORC36B,9.62 m door closed,36,245,10.9,12.1,0.14,48,20754,0 rejected
+room_to_room,ROOM36A,about 11 m,36,250,20.1,21.1,0.07,25,21299,complete at the threshold
+room_to_room,ROOM36B,about 11 m,36,268,21.2,17.3,0.00,0,22213,complete
+room_to_room,ROOM30A,about 11 m,30,268,13.3,9.9,0.22,78,21586,complete
+room_to_room,ROOM30B,about 11 m,30,268,13.8,9.9,0.17,59,21675,complete (log note said gain 24; corrected)
+room_to_room,ROOM24A,about 11 m,24,268,8.7,4.7,5.15,1796,5479,complete
+room_to_room,ROOM24D,about 11 m,24,268,9.3,4.9,5.01,1748,6357,complete
+# spacing (2 m, gain 24, 0/0, QBER 0.00%, key 22213 in all complete captures): lambda/2 2 captures mean SINR 23.6 22.1; lambda 3: 24.8 28.0 26.8; 2 lambda 2: 29.3 28.6; 4 lambda 2: 25.3 26.7; 6 lambda 2: 27.0 27.0; 8 lambda 2: 26.9 26.3 (status summary 16 Nov)
+# Excluded captures (incomplete frames, Sender USB stalls or restarts) are listed in the status summary and are not in this table.
