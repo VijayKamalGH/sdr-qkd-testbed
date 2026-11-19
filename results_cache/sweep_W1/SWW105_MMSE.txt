@@ -1,0 +1,18 @@
+============================================================================
+H1.94E V18-Z38 SDR 2x2 MIMO QKD -- RECEIVER
+============================================================================
+Residual CFO +579.3 Hz (line/median 24)
+Residual CFO from frame-to-frame pilot phase: -0.04 Hz (267 frame pairs)
+Frames synchronised: 268   (peak/median 127)
+Receive-noise model: FULL covariance, pooled |rho| = 0.401
+Blind common-phase correction: ON (per frame)
+Frame index decoded OK: 196 frames, 72 rejected; unique frame indices 189
+
+Qubits measured 51408 | sifted 25815 (50.2%)
+QBER total 15.09%   Z-basis 15.63%   X-basis 14.53%   (errors 3895)
+Wrong-basis outcomes balance (should be ~50% ones): 54.9%
+Channel |H| singular values 0.00042, 0.00012 (cond 3.53)
+Post-MMSE SINR per stream: A +3.2 dB, B +2.3 dB
+Test subset 2581 bits: Q_est 15.46%  Q_upper 20.63% (eps 1e-06)
+ABORT: Q_upper > 11% -> no secret key (BB84 threshold). Raise TX gain.
+saved sweep_W1/SWW105_MMSE_qkd.json
