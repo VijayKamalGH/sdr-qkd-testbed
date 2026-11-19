@@ -1,0 +1,630 @@
+[
+ {
+  "k": 0,
+  "tag": "SWD5M00",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 17:48:44",
+  "sha256": [
+   "398901330cc36803d7b1e4bb705f738e62c1414db56c78cd185ad21ea368dfe9",
+   "eb35906aa741d08c4b751e9137ea35de729ff6350d2f5794fc609043c4413715"
+  ],
+  "noise": {
+   "rms0": 0.001648006762594866,
+   "rms1": 0.003493735855565246,
+   "rho": 0.17205971915864315,
+   "phase_deg": -153.34907044965516
+  }
+ },
+ {
+  "k": 1,
+  "tag": "SWD5M01",
+  "gain": 22.0,
+  "state": "ON",
+  "t": "2026-11-10 17:49:13",
+  "sha256": [
+   "72e4a653ad8ce40f98e8ff49055288f03e9fd683c90e61b6eb2720bbd33330a4",
+   "7875d11a48b1fbf25a5d81209b30fdb03053302d6ecedb589ee3089eaa18d7f7"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 39984,
+    "sifted": 20015,
+    "qber": 0.12695478391206594,
+    "qber_z": 0.14016990291262135,
+    "qber_x": 0.11405154537375334,
+    "frames": 147,
+    "cfo_hz": 529.7628154727281,
+    "sinr_a_db": 7.146086902633649,
+    "sinr_b_db": 4.041728755407626,
+    "sinr_mean_db": 5.865572601415884,
+    "cond": 3.6953195056131856,
+    "abort": true
+   },
+   "ZF": {
+    "qubits": 31824,
+    "sifted": 15919,
+    "qber": 0.12488221621961179,
+    "qber_z": 0.1284497011318835,
+    "qber_x": 0.12140019860973188,
+    "frames": 117,
+    "cfo_hz": 529.7628154727281,
+    "sinr_a_db": 7.7988136715023595,
+    "sinr_b_db": 4.545518085520076,
+    "sinr_mean_db": 6.469928913484244,
+    "cond": 3.3500722417714157,
+    "abort": true
+   }
+  }
+ },
+ {
+  "k": 2,
+  "tag": "SWD5M02",
+  "gain": 20.0,
+  "state": "ON",
+  "t": "2026-11-10 17:50:03",
+  "sha256": [
+   "5aa5646a74c81ff184983df00485b6bed6d1b020ffc661da0153dd702f39e7d0",
+   "79767f78cd3c9017ec76e88076c57797d3cd6034d0c2ae62cad668bd13e8d32f"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 3,
+  "tag": "SWD5M03",
+  "gain": 22.0,
+  "state": "ON",
+  "t": "2026-11-10 17:50:54",
+  "sha256": [
+   "97c6ac96c03d7920bdb34e942b0ddd81257ed1c6529156c27f6b49d50173a60a",
+   "1259f44ec3051025a6aab22cdc60babf0d4dacbd2ec8e22fce10d7714916e314"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 4,
+  "tag": "SWD5M04",
+  "gain": 26.0,
+  "state": "ON",
+  "t": "2026-11-10 17:51:44",
+  "sha256": [
+   "487dc96da12a9299b0420fa9211cbc8379a47cef0e71aa979749fbbd0e487e38",
+   "b41eaf44d6d27be256517f8a61aafa40581c02695a954c021ee6565ddff574e8"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 50592,
+    "sifted": 25365,
+    "qber": 0.06098955253301794,
+    "qber_z": 0.06033325436310511,
+    "qber_x": 0.06164383561643835,
+    "frames": 186,
+    "cfo_hz": 558.580022086855,
+    "sinr_a_db": 11.337498952557771,
+    "sinr_b_db": 8.509029713815684,
+    "sinr_mean_db": 10.149571596958623,
+    "cond": 3.47032043111289,
+    "abort": true
+   },
+   "ZF": {
+    "qubits": 48144,
+    "sifted": 24154,
+    "qber": 0.07050592034445641,
+    "qber_z": 0.06354209871422646,
+    "qber_x": 0.07744441689395817,
+    "frames": 177,
+    "cfo_hz": 558.580022086855,
+    "sinr_a_db": 11.541006922311073,
+    "sinr_b_db": 8.664086523105103,
+    "sinr_mean_db": 10.3365360968527,
+    "cond": 3.339802060679359,
+    "abort": true
+   }
+  }
+ },
+ {
+  "k": 5,
+  "tag": "SWD5M05",
+  "gain": 28.0,
+  "state": "ON",
+  "t": "2026-11-10 17:52:35",
+  "sha256": [
+   "32dda9d1f44b8a9f839bb219e18ed0697133cbd1aa0a197ccc50217f73f09a7c",
+   "e56b7d119de83a31ebae0debcac5466e6f505104557f2b1ec0609a03283beb2f"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 52496,
+    "sifted": 26342,
+    "qber": 0.05386834712626224,
+    "qber_z": 0.055379746835443035,
+    "qber_x": 0.0523335883703137,
+    "frames": 193,
+    "cfo_hz": 550.4374617225403,
+    "sinr_a_db": 12.32495158551414,
+    "sinr_b_db": 10.291788662960924,
+    "sinr_mean_db": 11.426278159295752,
+    "cond": 3.5964915202049665,
+    "abort": false,
+    "leak": 8891,
+    "reconciled": true,
+    "final_bits": 3057,
+    "keys_equal": true,
+    "key_per_qubit": 0.05823300822919841
+   },
+   "ZF": {
+    "qubits": 49776,
+    "sifted": 24965,
+    "qber": 0.06124574404165832,
+    "qber_z": 0.05507430660414846,
+    "qber_x": 0.067517363915361,
+    "frames": 183,
+    "cfo_hz": 550.4374617225403,
+    "sinr_a_db": 12.497232624417652,
+    "sinr_b_db": 10.442384104586315,
+    "sinr_mean_db": 11.590221898513594,
+    "cond": 3.5042367215754373,
+    "abort": true
+   }
+  }
+ },
+ {
+  "k": 6,
+  "tag": "SWD5M06",
+  "gain": 20.0,
+  "state": "ON",
+  "t": "2026-11-10 17:53:27",
+  "sha256": [
+   "1b3d8483457c029818d376fa9ed54bffbb52a46c1610038d0a215d75f2ac04d5",
+   "f92c6d32678b9b4ca9d80c1e06158b620c39e81231e27975ee746798131c3556"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 7,
+  "tag": "SWD5M07",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 17:54:05",
+  "sha256": [
+   "b57cebe8000dfbc80a2915d0af232b23430f2bce3828731a29477d3be111719b",
+   "b7da4e22364cbb7c64e52ed83bd780752dc384c13f15d3484f8bb9c5dd2ee929"
+  ],
+  "noise": {
+   "rms0": 0.0013529029990045197,
+   "rms1": 0.0027059077233639803,
+   "rho": 0.2631720812801032,
+   "phase_deg": -105.16987323595579
+  }
+ },
+ {
+  "k": 8,
+  "tag": "SWD5M08",
+  "gain": 24.0,
+  "state": "ON",
+  "t": "2026-11-10 17:54:35",
+  "sha256": [
+   "49885d5005551276c9f15d465f736533f624d1d1be69f587114811ecf21f0a91",
+   "854aeb9a7fb38f7c5e924e00c9ff828e4d528598af6e243b45a9a7a27e16a28c"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 47872,
+    "sifted": 24078,
+    "qber": 0.09116205664922336,
+    "qber_z": 0.09565869510874093,
+    "qber_x": 0.08669371532665397,
+    "frames": 176,
+    "cfo_hz": 526.6067935814644,
+    "sinr_a_db": 8.736350912965111,
+    "sinr_b_db": 6.180410955274954,
+    "sinr_mean_db": 7.643758310945055,
+    "cond": 3.394297680215457,
+    "abort": true
+   },
+   "ZF": {
+    "qubits": 42704,
+    "sifted": 21395,
+    "qber": 0.10591259640102828,
+    "qber_z": 0.09464788732394366,
+    "qber_x": 0.11707771056305258,
+    "frames": 157,
+    "cfo_hz": 526.6067935814644,
+    "sinr_a_db": 9.05479522882937,
+    "sinr_b_db": 6.413497517165815,
+    "sinr_mean_db": 7.931924403911498,
+    "cond": 3.234737927626295,
+    "abort": true
+   }
+  }
+ },
+ {
+  "k": 9,
+  "tag": "SWD5M09",
+  "gain": 26.0,
+  "state": "ON",
+  "t": "2026-11-10 17:55:26",
+  "sha256": [
+   "e3a7843c39e556fe51f97197891fa73bcc9520e99868b9c1671cbbac8a237bb0",
+   "62491909cf2c380fbc8ac980ba97fbbd1e7be9c3db00bed7d9bbd3b0cb5b5684"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 51408,
+    "sifted": 25657,
+    "qber": 0.055657325486222084,
+    "qber_z": 0.05865878325812977,
+    "qber_x": 0.05264391158322268,
+    "frames": 189,
+    "cfo_hz": 544.2802092241909,
+    "sinr_a_db": 11.65915990397259,
+    "sinr_b_db": 8.15652605974681,
+    "sinr_mean_db": 10.251782440438513,
+    "cond": 2.746964236244248,
+    "abort": true
+   },
+   "ZF": {
+    "qubits": 49504,
+    "sifted": 24718,
+    "qber": 0.06735981875556275,
+    "qber_z": 0.060515713134568896,
+    "qber_x": 0.0742606434839129,
+    "frames": 182,
+    "cfo_hz": 544.2802092241909,
+    "sinr_a_db": 11.79810457253122,
+    "sinr_b_db": 8.26079471548377,
+    "sinr_mean_db": 10.380054406589442,
+    "cond": 2.689714243202252,
+    "abort": true
+   }
+  }
+ },
+ {
+  "k": 10,
+  "tag": "SWD5M10",
+  "gain": 20.0,
+  "state": "ON",
+  "t": "2026-11-10 17:56:16",
+  "sha256": [
+   "132e15c2f216134db8448931987d02d00205c15c1e0cbe5ba36176626333464e",
+   "b469607bb117cf3681f57bc6a9560eab9b7afaeaa11da861ac944c379e51d1ed"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 11,
+  "tag": "SWD5M11",
+  "gain": 26.0,
+  "state": "ON",
+  "t": "2026-11-10 17:57:07",
+  "sha256": [
+   "8c5549563584a670736b26d8107b35b6e362f6af08466a05be3f2f8ab80d471f",
+   "0090dc5d19d613aa23e6037180d028a6eb2054d09d9330153fb9df7851560b79"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 50592,
+    "sifted": 25321,
+    "qber": 0.028987796690494057,
+    "qber_z": 0.02492749078937054,
+    "qber_x": 0.033110474371219355,
+    "frames": 186,
+    "cfo_hz": 545.560127157878,
+    "sinr_a_db": 11.688262147382494,
+    "sinr_b_db": 10.109057258131868,
+    "sinr_mean_db": 10.970047565638701,
+    "cond": 2.697805760230939,
+    "abort": false,
+    "leak": 5118,
+    "reconciled": true,
+    "final_bits": 8667,
+    "keys_equal": true,
+    "key_per_qubit": 0.17131166982922202
+   },
+   "ZF": {
+    "qubits": 50320,
+    "sifted": 25180,
+    "qber": 0.035027799841143764,
+    "qber_z": 0.026394579262527577,
+    "qber_x": 0.04380204996796925,
+    "frames": 185,
+    "cfo_hz": 545.560127157878,
+    "sinr_a_db": 11.702039519219483,
+    "sinr_b_db": 10.118272407699237,
+    "sinr_mean_db": 10.981954630754622,
+    "cond": 2.689431128518814,
+    "abort": false,
+    "leak": 5985,
+    "reconciled": true,
+    "final_bits": 6798,
+    "keys_equal": true,
+    "key_per_qubit": 0.13509538950715422
+   }
+  }
+ },
+ {
+  "k": 12,
+  "tag": "SWD5M12",
+  "gain": 24.0,
+  "state": "ON",
+  "t": "2026-11-10 17:57:59",
+  "sha256": [
+   "8599f00eadbc07a7c6c24e5acdf5fe0014e00aedc9e8a9cfa114ee8b4406c9bf",
+   "0f137c882d9e075f245e61839260af50c2ab0edad3e0b3120b644be87ed1a459"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 39168,
+    "sifted": 19594,
+    "qber": 0.027253240787996326,
+    "qber_z": 0.023343913177024674,
+    "qber_x": 0.031138699501373768,
+    "frames": 144,
+    "cfo_hz": 540.164756861006,
+    "sinr_a_db": 10.47593164376774,
+    "sinr_b_db": 8.387009338695094,
+    "sinr_mean_db": 9.55587254715722,
+    "cond": 2.5253362273460573,
+    "abort": false,
+    "leak": 3802,
+    "reconciled": true,
+    "final_bits": 6277,
+    "keys_equal": true,
+    "key_per_qubit": 0.16025837418300654
+   },
+   "ZF": {
+    "qubits": 39168,
+    "sifted": 19594,
+    "qber": 0.032203735837501274,
+    "qber_z": 0.025391624859219822,
+    "qber_x": 0.03897425460466063,
+    "frames": 144,
+    "cfo_hz": 540.164756861006,
+    "sinr_a_db": 10.47593164376774,
+    "sinr_b_db": 8.387009338695094,
+    "sinr_mean_db": 9.55587254715722,
+    "cond": 2.5253362273460573,
+    "abort": false,
+    "leak": 4337,
+    "reconciled": true,
+    "final_bits": 5530,
+    "keys_equal": true,
+    "key_per_qubit": 0.14118668300653595
+   }
+  }
+ },
+ {
+  "k": 13,
+  "tag": "SWD5M13",
+  "gain": 28.0,
+  "state": "ON",
+  "t": "2026-11-10 17:58:50",
+  "sha256": [
+   "dfa4384e0657b136307dc7918d01fb1a5aba9d8aedc42bbd310120e5c79629ea",
+   "e159866a42a73176b2991fefd9dddf3b8e04f1adb77d4c521274f2ddd6d37ad0"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 57936,
+    "sifted": 28972,
+    "qber": 0.013357724699710066,
+    "qber_z": 0.010853034702060003,
+    "qber_x": 0.015855508065628018,
+    "frames": 213,
+    "cfo_hz": 538.5544845314726,
+    "sinr_a_db": 14.556102789934684,
+    "sinr_b_db": 11.654591133628259,
+    "sinr_mean_db": 13.343281815281859,
+    "cond": 2.130532746754471,
+    "abort": false,
+    "leak": 3120,
+    "reconciled": true,
+    "final_bits": 14141,
+    "keys_equal": true,
+    "key_per_qubit": 0.2440796741231704
+   },
+   "ZF": {
+    "qubits": 57936,
+    "sifted": 28972,
+    "qber": 0.014151594643103687,
+    "qber_z": 0.011544310797732615,
+    "qber_x": 0.016751688956293947,
+    "frames": 213,
+    "cfo_hz": 538.5544845314726,
+    "sinr_a_db": 14.556102789934684,
+    "sinr_b_db": 11.654591133628259,
+    "sinr_mean_db": 13.343281815281859,
+    "cond": 2.130532746754471,
+    "abort": false,
+    "leak": 3302,
+    "reconciled": true,
+    "final_bits": 13854,
+    "keys_equal": true,
+    "key_per_qubit": 0.23912593206296603
+   }
+  }
+ },
+ {
+  "k": 14,
+  "tag": "SWD5M14",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 17:59:29",
+  "sha256": [
+   "f0ee80dd184eaa25b4c07b51b732056e4c2da7f9c8d39b9c043671a40e2d6f0c",
+   "cb3c9ef6c93b34622ea7314903e740cc03b833f153e4958296d12aca4d56cf03"
+  ],
+  "noise": {
+   "rms0": 0.0014075548476039999,
+   "rms1": 0.002703064383119282,
+   "rho": 0.22431168596176865,
+   "phase_deg": -155.29470313183413
+  }
+ },
+ {
+  "k": 15,
+  "tag": "SWD5M15",
+  "gain": 24.0,
+  "state": "ON",
+  "t": "2026-11-10 17:59:58",
+  "sha256": [
+   "cf8e1628bc334c2f9784f3ca111aea9e69b42b26953e58df6a41b0cccd82a946",
+   "226908c8319a9b24ea2e6e4d8fc7d424bc77b8e5f5779608d47080fb35f9598a"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 37536,
+    "sifted": 18757,
+    "qber": 0.046435997227701656,
+    "qber_z": 0.045748173250026475,
+    "qber_x": 0.047133347648700884,
+    "frames": 138,
+    "cfo_hz": 516.7276935287082,
+    "sinr_a_db": 9.558225783725439,
+    "sinr_b_db": 7.818786974817778,
+    "sinr_mean_db": 8.77501558140499,
+    "cond": 2.775701821327659,
+    "abort": false,
+    "leak": 5506,
+    "reconciled": true,
+    "final_bits": 3553,
+    "keys_equal": true,
+    "key_per_qubit": 0.09465579710144928
+   },
+   "ZF": {
+    "qubits": 37536,
+    "sifted": 18757,
+    "qber": 0.04926160899930693,
+    "qber_z": 0.04744255003706449,
+    "qber_x": 0.05110586214301052,
+    "frames": 138,
+    "cfo_hz": 516.7276935287082,
+    "sinr_a_db": 9.558225783725439,
+    "sinr_b_db": 7.818786974817778,
+    "sinr_mean_db": 8.77501558140499,
+    "cond": 2.775701821327659,
+    "abort": false,
+    "leak": 5754,
+    "reconciled": true,
+    "final_bits": 3076,
+    "keys_equal": true,
+    "key_per_qubit": 0.08194799658994033
+   }
+  }
+ },
+ {
+  "k": 16,
+  "tag": "SWD5M16",
+  "gain": 28.0,
+  "state": "ON",
+  "t": "2026-11-10 18:00:51",
+  "sha256": [
+   "a346fcdc072e1ba5d102bf684ad34b44b0b1c354697a0c6c493325af665fff67",
+   "4cde0e77e83cdc0e69a99555b784fb0c45538dbef528e922395f9cb8e55ba5e5"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 67456,
+    "sifted": 33827,
+    "qber": 0.031542850385786504,
+    "qber_z": 0.0288041553535592,
+    "qber_x": 0.034290790642582177,
+    "frames": 248,
+    "cfo_hz": 532.1794413224125,
+    "sinr_a_db": 15.008368648183573,
+    "sinr_b_db": 10.546232756445589,
+    "sinr_mean_db": 13.326811710357493,
+    "cond": 3.8331774687715345,
+    "abort": false,
+    "leak": 7299,
+    "reconciled": true,
+    "final_bits": 11596,
+    "keys_equal": true,
+    "key_per_qubit": 0.17190464895635674
+   },
+   "ZF": {
+    "qubits": 67456,
+    "sifted": 33827,
+    "qber": 0.031897596594436396,
+    "qber_z": 0.028745130445047812,
+    "qber_x": 0.03506070476754516,
+    "frames": 248,
+    "cfo_hz": 532.1794413224125,
+    "sinr_a_db": 15.008368648183573,
+    "sinr_b_db": 10.546232756445589,
+    "sinr_mean_db": 13.326811710357493,
+    "cond": 3.8331774687715345,
+    "abort": false,
+    "leak": 7385,
+    "reconciled": true,
+    "final_bits": 11543,
+    "keys_equal": true,
+    "key_per_qubit": 0.17111895161290322
+   }
+  }
+ },
+ {
+  "k": 17,
+  "tag": "SWD5M17",
+  "gain": 22.0,
+  "state": "ON",
+  "t": "2026-11-10 18:01:42",
+  "sha256": [
+   "466e027dc6e2eee181bdb514e8bde30cfb2c4735fa30ffb3fc2118b21684a7a4",
+   "58b4c11b2fb08390d0eb0a4343ad2d003fe9e36161d3629f1c708e42d51f01a6"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 18,
+  "tag": "SWD5M18",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 18:02:21",
+  "sha256": [
+   "692b976fdfa5f9063111c761e5550ec757f2e01cdaa8346c7a857ec55a2b8a05",
+   "f1a6e4e62d6994e28110cdcf4b3ff2b80eb59aed2dcb94cbb723ac453cc63e61"
+  ],
+  "noise": {
+   "rms0": 0.0013667355253542696,
+   "rms1": 0.002782893038424403,
+   "rho": 0.23631333329631243,
+   "phase_deg": 158.89555301103806
+  }
+ }
+]

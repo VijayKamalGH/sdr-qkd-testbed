@@ -1,0 +1,86 @@
+{
+ "tag": "SWW204",
+ "frames": 228,
+ "sifted": 31077,
+ "cfo_hz": 559.7599011561251,
+ "qber_measured": 0.07240081088908196,
+ "qber_model_unbiased": 0.05374231746951121,
+ "qber_model_raw": 0.053690832448434526,
+ "ratio_meas_over_model": 1.3471843846361105,
+ "mahalanobis_mean": 2.495331918441242,
+ "mahalanobis_expected": 2.0,
+ "var_ratio_re_A": 1.2828339070945998,
+ "var_ratio_im_A": 1.5669981040648546,
+ "var_ratio_re_B": 0.971506701959076,
+ "var_ratio_im_B": 1.2025584293108535,
+ "real_cross_cov_emp_over_pred": -0.4606591782338796,
+ "frame_dispersion_index": 4.702150872895582,
+ "qber_by_position": [
+  0.0657927905218049,
+  0.0594959729799948,
+  0.06573498964803312,
+  0.07631241997439181,
+  0.06668369954011241,
+  0.07361477572559366,
+  0.0812612150730582,
+  0.0903010033444816
+ ],
+ "phase_dev_std_rad_A": 0.32721274446781884,
+ "phase_dev_std_rad_B": 0.23318561702967128,
+ "phase_noise_only_rad_A": 0.03178882676034047,
+ "phase_noise_only_rad_B": 0.030628310634615293,
+ "mag_dev_std_A": 0.12876900508095476,
+ "mag_dev_std_B": 0.0582540086868043,
+ "mag_noise_only_A": 0.03178882676034047,
+ "phase_dev_mean_rad_A": 0.023913793826860815,
+ "phase_dev_mean_rad_B": 0.017006762272486424,
+ "resid_var_ratio_re_A": 1.1706854103133015,
+ "resid_var_ratio_im_A": 1.1699483785550444,
+ "resid_var_ratio_re_B": 0.9192357652835819,
+ "resid_var_ratio_im_B": 0.9712039723379144,
+ "cfo_slope_hz_mean_A": 0.12414298831908042,
+ "cfo_slope_hz_mean_B": 0.20461228436923506,
+ "cfo_slope_hz_sem_A": 0.1458492618275664,
+ "cfo_slope_hz_std_A": 2.2022755586091614,
+ "noise_guard_diag": [
+  9.36167653473624e-09,
+  6.129385396539204e-08
+ ],
+ "noise_data_diag": [
+  9.491708775326317e-09,
+  6.180480157667026e-08
+ ],
+ "noise_data_over_guard": [
+  1.0138898454894907,
+  1.0083360333577116
+ ],
+ "noise_corr_guard": 0.49555008136650847,
+ "noise_corr_data": 0.48135117714797776,
+ "qber_fullR_measured": 0.05998004955433279,
+ "qber_fullR_model": 0.04411300962126334,
+ "mahalanobis_fullR": 2.6673759915443553,
+ "var_ratio_fullR": [
+  1.131801933755681,
+  1.4069194877904612,
+  1.0772048143683155,
+  1.3378263256556082
+ ],
+ "noise_corr_matrix_abs": 0.49555008136650786,
+ "qber_phase_track": 0.04932908581909451,
+ "qber_phase_frame": 0.04923255140457573,
+ "phase_win": 32,
+ "phase_frame_std_rad": 0.27468143438436554,
+ "phase_track_inframe_std_rad": 0.11454403913566089,
+ "mahalanobis_phase": 2.1498404154059267,
+ "var_ratio_phase": [
+  1.1109571843756443,
+  1.0095209226795876,
+  1.058746169890303,
+  1.0531929589364764
+ ],
+ "offdiag_mean": 0.18743783292132588,
+ "P_diag_log10_mean": [
+  -0.6657652059787273,
+  -0.6856373460497348
+ ]
+}

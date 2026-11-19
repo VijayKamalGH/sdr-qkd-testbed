@@ -1,0 +1,125 @@
+[
+ {
+  "k": 0,
+  "tag": "SWD2P300",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 19:33:24",
+  "sha256": [
+   "17b008054fa8738b776a531581172724f02d548e3e70cb1a093933af6ad41541",
+   "81347dc546956a0f1b015f0b12219758011d096e78e617f23a821c02cded0ab6"
+  ],
+  "noise": {
+   "rms0": 0.002747114347287348,
+   "rms1": 0.003548502250493833,
+   "rho": 0.43939701668964437,
+   "phase_deg": -36.17785065814496
+  }
+ },
+ {
+  "k": 1,
+  "tag": "SWD2P301",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 19:33:53",
+  "sha256": [
+   "f50785e1c98a01ee119f8edfcaa1898aae115d63d77a4672d55a4d72194eb4bc",
+   "b6965f3293207f7fd877266cf7d90ca2e988cd98d13d97b2e4d1da1dc399f59a"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 58480,
+    "sifted": 29289,
+    "qber": 0.03957117006384649,
+    "qber_z": 0.04873547505126453,
+    "qber_x": 0.030424994883689202,
+    "frames": 215,
+    "cfo_hz": 512.9840220020269,
+    "sinr_a_db": 7.357772248314206,
+    "sinr_b_db": 7.101349063513523,
+    "sinr_mean_db": 7.231452900221934,
+    "cond": 12.31364006915938,
+    "abort": false,
+    "leak": 7634,
+    "reconciled": true,
+    "final_bits": 7160,
+    "keys_equal": true,
+    "key_per_qubit": 0.12243502051983585
+   },
+   "ZF": {
+    "qubits": 56576,
+    "sifted": 28390,
+    "qber": 0.04181049665375132,
+    "qber_z": 0.048806403626832896,
+    "qber_x": 0.034891053037203114,
+    "frames": 208,
+    "cfo_hz": 512.9840220020269,
+    "sinr_a_db": 7.378682213565981,
+    "sinr_b_db": 7.127236455766992,
+    "sinr_mean_db": 7.254778841446344,
+    "cond": 12.268516751808983,
+    "abort": false,
+    "leak": 7686,
+    "reconciled": true,
+    "final_bits": 6359,
+    "keys_equal": true,
+    "key_per_qubit": 0.11239748303167421
+   }
+  }
+ },
+ {
+  "k": 2,
+  "tag": "SWD2P302",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 19:34:44",
+  "sha256": [
+   "0d3542e17e783b286491b0220cb6727b0e4571e7ef47dc235bd554afb837e560",
+   "44fce1b84eab3dd73efe25686bd77269fb2d40dca04c15875e689049bad1dd8c"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 3,
+  "tag": "SWD2P303",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 19:35:35",
+  "sha256": [
+   "30d53d0634ac53e685f111004c77703dd21be7bdd040c8cb74200f60ca81771f",
+   "51129adcfaf1f3ae1dc3043a979ad90c60ab355d7e9dde463a59519f6689a33e"
+  ],
+  "analysis": {
+   "MMSE": {
+    "error": "analyser failed"
+   },
+   "ZF": {
+    "error": "analyser failed"
+   }
+  }
+ },
+ {
+  "k": 4,
+  "tag": "SWD2P304",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 19:36:14",
+  "sha256": [
+   "c3d741026279788a367809d3c74ff2c1cbb694aa1572b2c4d1a0c9f17b35172e",
+   "3f42cc7c36bc98f1e2c22c158f07afdde74ee7ec2da9b0759b2fb82445a6cc0d"
+  ],
+  "noise": {
+   "rms0": 0.002360148233692404,
+   "rms1": 0.003392291085986744,
+   "rho": 0.3659285551873152,
+   "phase_deg": -30.92416174855892
+  }
+ }
+]

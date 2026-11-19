@@ -1,0 +1,189 @@
+[
+ {
+  "k": 0,
+  "tag": "SWD2P100",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 18:53:30",
+  "sha256": [
+   "dacece27a32fb20070f6faabfee84d04d85c52e69b93291d908bddec811f1b84",
+   "71e35dd58c510eb720cca2723c1465edebc59c38f298f771af05b12905ea13ae"
+  ],
+  "noise": {
+   "rms0": 0.001480365920710501,
+   "rms1": 0.002716129596743358,
+   "rho": 0.3752820711555207,
+   "phase_deg": 115.57566707591529
+  }
+ },
+ {
+  "k": 1,
+  "tag": "SWD2P101",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 18:53:59",
+  "sha256": [
+   "8f9262a42948fa74982a7b21ea26e0cb10c92b0620080195abad46acca10672e",
+   "12eb29ee71c35eb0ace6b43d9227e2ad3c133fb4242681c8a7f889f11ca69780"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.0068760027504011,
+    "qber_z": 0.005902578796561604,
+    "qber_x": 0.007849203620946488,
+    "frames": 256,
+    "cfo_hz": 510.8007001887745,
+    "sinr_a_db": 13.573591399414566,
+    "sinr_b_db": 8.23637774571133,
+    "sinr_mean_db": 11.677942721459987,
+    "cond": 8.807373175016837,
+    "abort": false,
+    "leak": 2319,
+    "reconciled": true,
+    "final_bits": 19952,
+    "keys_equal": true,
+    "key_per_qubit": 0.28653492647058826
+   },
+   "ZF": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.007477652991061196,
+    "qber_z": 0.006131805157593123,
+    "qber_x": 0.008823192391428899,
+    "frames": 256,
+    "cfo_hz": 510.8007001887745,
+    "sinr_a_db": 13.573591399414566,
+    "sinr_b_db": 8.23637774571133,
+    "sinr_mean_db": 11.677942721459987,
+    "cond": 8.807373175016837,
+    "abort": false,
+    "leak": 2424,
+    "reconciled": true,
+    "final_bits": 19658,
+    "keys_equal": true,
+    "key_per_qubit": 0.28231272977941174
+   }
+  }
+ },
+ {
+  "k": 2,
+  "tag": "SWD2P102",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 18:54:50",
+  "sha256": [
+   "3fc4f5e8276bbe5a1037e72972aebc3e5efc814129b75e004c50efad91e2549c",
+   "d8d28f1b523196856be4920a043d8ec50843fd989f8d5b4c070b2ae44fc521fb"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.0054148521659408665,
+    "qber_z": 0.00510028653295129,
+    "qber_x": 0.005729345708720064,
+    "frames": 256,
+    "cfo_hz": 535.1279816666356,
+    "sinr_a_db": 13.544538747384875,
+    "sinr_b_db": 8.272965715102508,
+    "sinr_mean_db": 11.663836064732738,
+    "cond": 8.643123833045916,
+    "abort": false,
+    "leak": 1954,
+    "reconciled": true,
+    "final_bits": 20128,
+    "keys_equal": true,
+    "key_per_qubit": 0.2890625
+   },
+   "ZF": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.006073802429520971,
+    "qber_z": 0.005272206303724929,
+    "qber_x": 0.006875214850464077,
+    "frames": 256,
+    "cfo_hz": 535.1279816666356,
+    "sinr_a_db": 13.544538747384875,
+    "sinr_b_db": 8.272965715102508,
+    "sinr_mean_db": 11.663836064732738,
+    "cond": 8.643123833045916,
+    "abort": false,
+    "leak": 2091,
+    "reconciled": true,
+    "final_bits": 19916,
+    "keys_equal": true,
+    "key_per_qubit": 0.28601792279411764
+   }
+  }
+ },
+ {
+  "k": 3,
+  "tag": "SWD2P103",
+  "gain": 12.0,
+  "state": "ON",
+  "t": "2026-11-10 18:55:42",
+  "sha256": [
+   "9ae7cc9844f16ff636b08fee23d40afffd4e5ab823e743b57fea59e7ca861d6a",
+   "d206895484d1871674eb19db5378f8fbdf6b8d7f7616e4dc240ab0a7d103c9be"
+  ],
+  "analysis": {
+   "MMSE": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.005644052257620903,
+    "qber_z": 0.004641833810888252,
+    "qber_x": 0.006646041022115274,
+    "frames": 256,
+    "cfo_hz": 544.1856393797498,
+    "sinr_a_db": 13.661982066905026,
+    "sinr_b_db": 8.334682623151744,
+    "sinr_mean_db": 11.768579623519045,
+    "cond": 8.728585954307546,
+    "abort": false,
+    "leak": 2037,
+    "reconciled": true,
+    "final_bits": 20234,
+    "keys_equal": true,
+    "key_per_qubit": 0.2905847886029412
+   },
+   "ZF": {
+    "qubits": 69632,
+    "sifted": 34904,
+    "qber": 0.0058732523493009395,
+    "qber_z": 0.004756446991404011,
+    "qber_x": 0.006989801764638478,
+    "frames": 256,
+    "cfo_hz": 544.1856393797498,
+    "sinr_a_db": 13.661982066905026,
+    "sinr_b_db": 8.334682623151744,
+    "sinr_mean_db": 11.768579623519045,
+    "cond": 8.728585954307546,
+    "abort": false,
+    "leak": 2094,
+    "reconciled": true,
+    "final_bits": 20215,
+    "keys_equal": true,
+    "key_per_qubit": 0.29031192555147056
+   }
+  }
+ },
+ {
+  "k": 4,
+  "tag": "SWD2P104",
+  "gain": "OFF",
+  "state": "OFF",
+  "t": "2026-11-10 18:56:23",
+  "sha256": [
+   "d64f46b7078c7f3aab00900624802531c9cd16daa6599211e37cdf3cbd3a783b",
+   "d5da8d7b286dedbad01ae2992f8036882121d2e5c2c905a5c77a5d4ef1975ea5"
+  ],
+  "noise": {
+   "rms0": 0.0015150830391199436,
+   "rms1": 0.0026891867312472946,
+   "rho": 0.4088438659182148,
+   "phase_deg": 122.97721128628666
+  }
+ }
+]
